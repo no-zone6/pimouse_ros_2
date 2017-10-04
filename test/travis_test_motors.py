@@ -70,7 +70,7 @@ class MotorTest(unittest.TestCase):
     self.file_check("rtmotor_raw_l0",0,"don't stop alter 1[s]")
 
   def test_put_value_timed(self):
-    tm = rospy.ServcieProxy('/time_motion', TimedMotion)
+    tm = rospy.ServcieProxy('/timed_motion', TimedMotion)
     tm(-321,654,1500)
     with open("/dev/rtmotor0","r") as f:
       data = f.readline()
